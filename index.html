@@ -1,23 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online Modular Synth</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div id = oscillatorContainer>
-      <div id="hzInputContainer">
-        <input type="text" class="textInput" id="hzInput">
-        <p>hz</p>
-      </div>
-      <div id="releaseInputContainer" >
-        <input type="text" class="textInput" id="releaseInput">
-        <p>release</p>
-      </div>
-    </div>
-    <script src="https://unpkg.com/tone"></script>
-    <script src="index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Sound Visualizer</title>
+  <script src="https://unpkg.com/tone@latest/build/Tone.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="notePlayer">
+  <div class="noteControls">
+    <label>
+      Frequency (Hz):
+      <input id="hzInput" type="text" value = 220>
+      <span id="hzValue">440</span>
+    </label>
+
+    <label>
+      Release Time (s):
+      <input id="releaseInput" type="text" value="0.5">
+      <span id="releaseValue">0.5</span>
+    </label>
+
+    <p>Press <strong>Space</strong> to play.</p>
+  </div>
+
+  <canvas id="visualizer" width="800" height="200"></canvas>
+  <script src="index.js"></script>
+</div>
+</body>
 </html>
