@@ -1,9 +1,14 @@
-var hzInput = document.getElementById("myRange");
+var hzInput = document.getElementById("hzInput");
+var releaseInput = document.getElementById("releaseInput");
 var hz;
+var release;
 
 // Update the current slider value (each time you drag the slider handle)
 hzInput.oninput = function() {
   hz = this.value
+}
+releaseInput.oninput = function() {
+  release = parseInt(this.value)
 }
 
 document.addEventListener('keydown', function(event) {
@@ -13,7 +18,7 @@ document.addEventListener('keydown', function(event) {
     // trigger the attack immediately
     synth.triggerAttack(hz, now);
     // wait one second before triggering the release
-    synth.triggerRelease(now + 1); 
+    synth.triggerRelease(now + release); 
   }
 });
 

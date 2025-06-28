@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="slidecontainer">
-      <input type="text" min=220" max="440" value="220" class="slider" id="myRange">
-      <p>hz</p>
+    <div id = oscillatorContainer>
+      <div id="hzInputContainer">
+        <input type="text" class="textInput" id="hzInput">
+        <p>hz</p>
+      </div>
+      <div id="releaseInputContainer" >
+        <input type="text" class="textInput" id="releaseInput">
+        <p>release</p>
+      </div>
     </div>
     <script src="https://unpkg.com/tone"></script>
     <script src="index.js"></script>
